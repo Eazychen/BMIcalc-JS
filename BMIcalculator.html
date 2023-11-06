@@ -2,9 +2,15 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
 		<title>BMI計算機</title>
-		<link rel="stylesheet" href="css/BMIcalculator.css" />
+		<link
+			rel="stylesheet"
+			href="css/BMIcalculator.css"
+		/>
 	</head>
 	<body>
 		<section class="container">
@@ -50,7 +56,7 @@
 				function bmi() {
 					var BmiHeight = personHeight.value / 100;
 					var BmiWeight = personWeight.value;
-					if (BmiWeight < 0 || BmiHeight < 0) {
+					if (BmiWeight <= 0 || BmiHeight <= 0) {
 						return "負數";
 					} else {
 						return (BmiWeight / (BmiHeight * BmiHeight)).toFixed(2);
@@ -67,7 +73,7 @@
 						bmiNotice.classList.remove("bmi-notice-light");
 						bmiNotice.classList.remove("bmi-notice-fat");
 						bmiNotice.classList.remove("bmi-notice-normal");
-						alert("身高或是體重不能為負數");
+						alert("身高或是體重不能為負數或是0");
 					} else {
 						if (calcBmi < 18.5) {
 							bmiInterger.textContent = "您的BMI是" + bmi();
